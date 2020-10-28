@@ -1,131 +1,78 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Welcome to TopBadan</title>
-
-  <!-- update the version number as needed -->
-  <script defer src="/__/firebase/7.24.0/firebase-app.js"></script>
-  <!-- include only the Firebase features as you need -->
-  <script defer src="/__/firebase/7.24.0/firebase-auth.js"></script>
-  <script defer src="/__/firebase/7.24.0/firebase-database.js"></script>
-  <script defer src="/__/firebase/7.24.0/firebase-messaging.js"></script>
-  <script defer src="/__/firebase/7.24.0/firebase-storage.js"></script>
-  <script defer src="/__/firebase/7.24.0/firebase-analytics.js"></script>
-  <script defer src="/__/firebase/7.24.0/firebase-remote-config.js"></script>
-  <script defer src="/__/firebase/7.24.0/firebase-performance.js"></script>
-  <!-- initialize the SDK after all desired features are loaded -->
-  <script defer src="/__/firebase/init.js"></script>
-
-  <style media="screen">
-    body {
-      background: #ECEFF1;
-      color: rgba(0, 0, 0, 0.87);
-      font-family: Roboto, Helvetica, Arial, sans-serif;
-      margin: 0;
-      padding: 0;
+ <style>
+    .header {
+      width: 1300px;
+      height: 10px;
+      background: black;
+      transition: height 2s;
+      margin: auto;
+      border-bottom-left-radius:50px;
+      border-top-right-radius:50px;
     }
 
-    #message {
-      background: white;
-      max-width: 360px;
-      margin: 100px auto 16px;
-      padding: 32px 24px;
-      border-radius: 3px;
+    .header:hover {
+        height: 80px;
     }
-
-    #message h2 {
-      color: #ffa100;
-      font-weight: bold;
-      font-size: 16px;
-      margin: 0 0 8px;
+    .Btn-in {
+          border-radius: 10px;
+          background-color: white;
+          border-style: none;
+          color: white;
+          padding: 1px 22px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 16px;
+          margin: 4px 2px;
+          transition-duration: 0.4s;
+          cursor: pointer;
     }
-
-    #message h1 {
-      font-size: 22px;
-      font-weight: 300;
-      color: rgba(0, 0, 0, 0.6);
-      margin: 0 0 16px;
+    .Btn-in:hover {
+          background-color: white;
+          color: black;
     }
-
-    #message p {
-      line-height: 140%;
-      margin: 16px 0 24px;
-      font-size: 14px;
+    .form{
+        padding-top: 20px;
+        padding-left: 20px;
     }
-
-    #message a {
-      display: block;
-      text-align: center;
-      background: #039be5;
-      text-transform: uppercase;
-      text-decoration: none;
-      color: white;
-      padding: 16px;
-      border-radius: 4px;
+    .h{
+        color:white;
+        border-color:white;
+        border-style:none;
     }
-
-    #message,
-    #message a {
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    .h:hover{
+        border-color:blueviolet;
+        color: white;
     }
-
-    #load {
-      color: rgba(0, 0, 0, 0.4);
-      text-align: center;
-      font-size: 13px;
+    .login{
+        height: 20px;
+        width: 60px;
+        border-radius:30px;
+        background-color: black;
+        color: white;
+        text-align: center;
+        margin: auto;
+        position: relative;
+        animation-name: LoginHeader;
+        animation-duration: 4s;
     }
-
-    @media (max-width: 600px) {
-
-      body,
-      #message {
-        margin-top: 0;
-        background: white;
-        box-shadow: none;
-      }
-
-      body {
-        border-top: 16px solid #ffa100;
-      }
-    }
-  </style>
+ </style>
 </head>
-
 <body>
-  <div id="message">
-    <h2>Hi</h2>
-    <h1>Firebase Hosting Setup Complete</h1>
-    <p>You're seeing this because you've successfully setup Firebase Hosting. Now it's time to go build something
-      extraordinary!</p>
-    <a target="_blank" href="https://firebase.google.com/docs/hosting/">Open Hosting Documentation</a>
-  </div>
-  <p id="load">Firebase SDK Loading&hellip;</p>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const loadEl = document.querySelector('#load');
+<div class="header">
+    <form class="form" action="scratch.html"method="get">
+        <label class="h" for="fname">Gmail </label>
+        <input class="h" type="text" id="fname" name="fname">
+        <label class="h" for="lname">password </label>
+        <input class="h" type="text" id="lname" name="lname">
+        <input class="Btn-in" type="submit" value="Send">
+    </form>
 
-      try {
-        let app = firebase.app();
-        let features = [
-          'auth',
-          'database',
-          'messaging',
-          'storage',
-          'analytics',
-          'remoteConfig',
-          'performance',
-        ].filter(feature => typeof app[feature] === 'function');
-        loadEl.textContent = `Firebase SDK loaded with ${features.join(', ')}`;
-      } catch (e) {
-        console.error(e);
-        loadEl.textContent = 'Error loading the Firebase SDK, check the console.';
-      }
-    });
-  </script>
+    <div class="login" ><label for="lname">login</label></div>
+</div>
+
 </body>
-
 </html>
