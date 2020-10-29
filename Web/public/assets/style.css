@@ -1,0 +1,55 @@
+.header {
+    width: 1300px;
+    height: 10px;
+    background: black;
+    transition: height 2s;
+    margin: auto;
+    border-bottom-left-radius:50px;
+    border-top-right-radius:50px;
+}
+.header:hover {
+    height: 80px;
+}
+.Btn-in {
+    border-radius: 10px;
+    background-color: white;
+    border-style: none;
+    color: white;
+    padding: 1px 22px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+.Btn-in:hover {
+    background-color: white;
+    color: black;
+}
+.form{
+    padding-top: 20px;
+    padding-left: 20px;
+}
+.h{
+    color:white;
+    border-color:white;
+    border-style:none;
+}
+.h:hover{
+    border-color:blueviolet;
+    color: white;
+}
+.login{
+    height: 20px;
+    width: 60px;
+    border-radius:30px;
+    background-color: black;
+    color: white;
+    text-align: center;
+    margin: auto;
+    position: relative;
+    animation-name: LoginHeader;
+    animation-duration: 4s;
+}
