@@ -1,12 +1,11 @@
 import os
 import shutil
 from time import sleep
-from adb import screencap, get_devices
+import adb
 
 
 def start():
-    screencap()
-    sleep(3)
+    adb.input_send_key(adb.KEYCODE.POWER, wait=False)
 
 
 def loop():
@@ -22,7 +21,12 @@ def onExit():
     dirs = os.listdir()
     for i in dirs:
         if not '.py' in i:
-            shutil.rmtree(i)
+            while True:
+                try:
+                    shutil.rmtree(i)
+                    break
+                except:
+                    pass
     print('onExit')
 
 
