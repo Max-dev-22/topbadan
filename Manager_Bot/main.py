@@ -1,9 +1,12 @@
+import os
+import shutil
 from time import sleep
-from funcs import print_devices_list
+from adb import screenshot, get_devices
 
 
 def start():
-    print_devices_list()
+    screenshot(get_devices()[0])
+    sleep(3)
 
 
 def loop():
@@ -16,6 +19,10 @@ def exit():
 
 
 def onExit():
+    dirs = os.listdir()
+    for i in dirs:
+        if not '.py' in i:
+            shutil.rmtree(i)
     print('onExit')
 
 
