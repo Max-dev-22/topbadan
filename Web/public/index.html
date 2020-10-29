@@ -1,31 +1,190 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
-      integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-    <link rel="stylesheet" href="assets/style.css">
+<html>
+<head>
+ <style>
+   body{
+     background-color: whitesmoke;
+   }
+    .mainbody{
+      width: 1300px;
+      height: 1300px;
+      background-color:#999999;
+      margin: auto;
+      border-top-right-radius: 1060px;
+      border-top-left-radius: 50px;
+    }
+    .Bodypageheader{
+      width: 1300px;
+      height: 100px;
+      background-color: white;
+      border-bottom-right-radius: 50px;
+      border-top-left-radius: 50px;
+    }
+    .Btn-in {
+          border-radius: 10px;
+          background-color: white;
+          border-style: none;
+          color: white;
+          padding: 1px 22px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 16px;
+          margin: 4px 2px;
+          transition-duration: 0.4s;
+          cursor: pointer;
+    }
+    .Btn-in:hover {
+          background-color: whitesmoke;
+          color: black;
+    }
+    .form{
+        padding-top: 40px;
+        padding-left: 30px;
+    }
+    .h{
+        color:white;
+        border-color:white;
+        border-style:none;
+    }
+    .h:hover{
+        border-color:blueviolet;
+        color: white;
+    }
+    .ha {
+      color: black;
+      border-color: white;
+      border-style: none;
+    }
+    #animate {
+    width: 1300px;
+    height: 10px;
+    position: absolute;
+    background-color: black;
+      border-bottom-right-radius: 60px;
+      border-top-left-radius:60px;
+    }
+    .logindiv{
+      padding-top: 85px;
+      padding-left: 0px;
+    }
+    .btntools{
+      width: 130px;
+      height: 40px;
+      font-size:30px;
+      margin-left: 10px;
+      text-align: center;
+      background-color: white;
+      color: black;
+      border: 2px solid #999999;
+      border-bottom-left-radius: 30px;
+      border-top-right-radius:30px;
+    }
+    .btntools:hover {
+     background-color: #555555;
+     color: white;
+     border-bottom-right-radius: 30px;
+      border-top-left-radius:30px;
 
-    <title>Top Badan</title>
-  </head>
+    }
+    .btntool{
+      width: 130px;
+      height: 40px;
+      font-size:30px;
+      margin-left: 0px;
+      text-align: center;
+      background-color: white;
+      color: black;
+      border: 2px solid #999999;
+      border-bottom-left-radius: 30px;
+      border-top-right-radius:30px;
+    }
+    .btntool:hover {
+     background-color: #555555;
+     color: white;
+      border-bottom-right-radius: 30px;
+      border-top-left-radius:30px;
+    }
+    .btntoolss{
+      width: 130px;
+      height: 40px;
+      font-size:30px;
+      margin-left: 460px;
+      text-align: center;
+      background-color: white;
+      color: black;
+      border: 2px solid #999999;
+      border-bottom-left-radius: 30px;
+      border-top-right-radius:30px;
+    }
+    .btntoolss:hover {
+     background-color: #555555;
+     color: white;
+      border-bottom-right-radius: 30px;
+      border-top-left-radius:30px;
+    }
+    .btnalltool{
+      margin-top: 0px;
+    }
+    .showbtnalltool{
+      width: 1300px;
+      height: 900px;
+      background-color: #888888;
+      margin-top: 0px;
+    }
+ </style>
+
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Top Badan</title>
+
+</head>
   <body>
-    <div class="header">
-        <form class="form" action="404.html"method="get">
-            <label class="h" for="fname">Gmail </label>
-            <input class="h" type="text" id="fname" name="fname">
-            <label class="h" for="lname">password </label>
-            <input class="h" type="text" id="lname" name="lname">
-            <input class="Btn-in" type="submit" value="Send">
-        </form>
-        <div class="login" ><label for="lname">login</label></div>
+    <div class="mainbody">
+      <div class="Bodypageheader">
+        <div id ="animate">
+           <form class="form" action="scratch.html"method="get">
+              <label class="h" for="fname">Gmail </label>
+              <input class="ha" type="text" id="fname" name="fname">
+              <label class="h" for="lname">password </label>
+              <input class="ha" type="text" id="lname" name="lname">
+              <input class="Btn-in" type="submit" value="Send">
+          </form>
+        </div>
+         <div class="logindiv">
+           <p>
+           </p>
+         </div>
+        <div class="btnalltool">
+          <button class="btntool">home</button>
+          <button class="btntools">test</button>
+          <button class="btntools">test</button>
+          <button class="btntools">test</button>
+          <button class="btntools">test</button>
+          <button class="btntoolss" onclick="myMove()">login</button>
+        </div>
+          <script>
+          function myMove() {
+            var elem = document.getElementById("animate");
+            var pos = 0;
+            var id = setInterval(frame, 5);
+            function frame() {
+              if (pos == 102) {
+                clearInterval(id);
+              } else {
+                pos++;
+                elem.style.height = pos + "px";
+              }
+            }
+          }
+          </script>
+        <div class="showbtnalltool">
+
+        </div>
+      </div>
     </div>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-      crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
-      crossorigin="anonymous"></script>
   </body>
 </html>
