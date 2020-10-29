@@ -1,11 +1,11 @@
 import os
 import shutil
 from time import sleep
-from adb import screenshot, get_devices
+from adb import screencap, get_devices
 
 
 def start():
-    screenshot(get_devices()[0])
+    screencap()
     sleep(3)
 
 

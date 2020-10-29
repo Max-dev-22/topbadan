@@ -13,10 +13,21 @@ def get_devices():
     return devices
 
 
-def screenshot(device, wait=True):
+def screencap(device=None, file_name='screencap.png', wait=True):
+    if device is None:
+        devices = get_devices()
+        if len(devices) < 1:
+            print('No attached device was found.')
+            return None
+        device = devices[0]
     if not os.path.isdir(device):
         os.makedirs(device)
     process = Popen('adb -s '+str(device) +
-                    ' exec-out screencap -p > screencap.png', shell=True, cwd=os.getcwd()+'\\'+str(device)+'\\')
+                    ' exec-out screencap -p > screencap.png'+str(file_name), shell=True, cwd=os.getcwd()+'\\'+str(device)+'\\')
     if wait:
         process.wait()
+    return str(os.getcwd()+'\\'+str(device)+'\\'+str(file_name))
+
+
+def shell_exec(device, command):
+    print('')
