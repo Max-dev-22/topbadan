@@ -1,55 +1,130 @@
-.header {
+   body{
+     background-color: whitesmoke;
+   }
+    .mainbody{
+      width: 1300px;
+      height: 1300px;
+      background-color:#999999;
+      margin: auto;
+      border-top-right-radius: 1060px;
+      border-top-left-radius: 50px;
+    }
+    .Bodypageheader{
+      width: 1300px;
+      height: 100px;
+      background-color: white;
+      border-bottom-right-radius: 50px;
+      border-top-left-radius: 50px;
+    }
+    .Btn-in {
+          border-radius: 10px;
+          background-color: white;
+          border-style: none;
+          color: white;
+          padding: 1px 22px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 16px;
+          margin: 4px 2px;
+          transition-duration: 0.4s;
+          cursor: pointer;
+    }
+    .Btn-in:hover {
+          background-color: whitesmoke;
+          color: black;
+    }
+    .form{
+        padding-top: 40px;
+        padding-left: 30px;
+    }
+    .h{
+        color:white;
+        border-color:white;
+        border-style:none;
+    }
+    .h:hover{
+        border-color:blueviolet;
+        color: white;
+    }
+    .ha {
+      color: black;
+      border-color: white;
+      border-style: none;
+    }
+    #animate {
     width: 1300px;
     height: 10px;
-    background: black;
-    transition: height 2s;
-    margin: auto;
-    border-bottom-left-radius:50px;
-    border-top-right-radius:50px;
-}
-.header:hover {
-    height: 80px;
-}
-.Btn-in {
-    border-radius: 10px;
-    background-color: white;
-    border-style: none;
-    color: white;
-    padding: 1px 22px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    transition-duration: 0.4s;
-    cursor: pointer;
-}
-.Btn-in:hover {
-    background-color: white;
-    color: black;
-}
-.form{
-    padding-top: 20px;
-    padding-left: 20px;
-}
-.h{
-    color:white;
-    border-color:white;
-    border-style:none;
-}
-.h:hover{
-    border-color:blueviolet;
-    color: white;
-}
-.login{
-    height: 20px;
-    width: 60px;
-    border-radius:30px;
+    position: absolute;
     background-color: black;
-    color: white;
-    text-align: center;
-    margin: auto;
-    position: relative;
-    animation-name: LoginHeader;
-    animation-duration: 4s;
-}
+      border-bottom-right-radius: 60px;
+      border-top-left-radius:60px;
+    }
+    .logindiv{
+      padding-top: 85px;
+      padding-left: 0px;
+    }
+    .btntools{
+      width: 130px;
+      height: 40px;
+      font-size:30px;
+      margin-left: 10px;
+      text-align: center;
+      background-color: white;
+      color: black;
+      border: 2px solid #999999;
+      border-bottom-left-radius: 30px;
+      border-top-right-radius:30px;
+    }
+    .btntools:hover {
+     background-color: #555555;
+     color: white;
+     border-bottom-right-radius: 30px;
+      border-top-left-radius:30px;
+
+    }
+    .btntool{
+      width: 130px;
+      height: 40px;
+      font-size:30px;
+      margin-left: 0px;
+      text-align: center;
+      background-color: white;
+      color: black;
+      border: 2px solid #999999;
+      border-bottom-left-radius: 30px;
+      border-top-right-radius:30px;
+    }
+    .btntool:hover {
+     background-color: #555555;
+     color: white;
+      border-bottom-right-radius: 30px;
+      border-top-left-radius:30px;
+    }
+    .btntoolss{
+      width: 130px;
+      height: 40px;
+      font-size:30px;
+      margin-left: 460px;
+      text-align: center;
+      background-color: white;
+      color: black;
+      border: 2px solid #999999;
+      border-bottom-left-radius: 30px;
+      border-top-right-radius:30px;
+    }
+    .btntoolss:hover {
+     background-color: #555555;
+     color: white;
+      border-bottom-right-radius: 30px;
+      border-top-left-radius:30px;
+    }
+    .btnalltool{
+      margin-top: 0px;
+    }
+    .showbtnalltool{
+      width: 1300px;
+      height: 900px;
+      background-color: #888888;
+      margin-top: 0px;
+    }
