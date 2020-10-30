@@ -5,7 +5,6 @@ import adb
 
 
 def start():
-    adb.start_app(adb.PACKAGE_NAME.vpn_phoenix)
     sleep(1)
 
 
@@ -21,7 +20,7 @@ def exit():
 def onExit():
     dirs = os.listdir()
     for i in dirs:
-        if not '.py' in i:
+        if not '.py' in i and i != 'assets':
             while True:
                 try:
                     shutil.rmtree(i)

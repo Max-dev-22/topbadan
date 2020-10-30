@@ -1,6 +1,6 @@
 import os
 from time import sleep
-from subprocess import check_output, Popen
+from subprocess import check_output, Popen, STDOUT
 
 
 class KEYCODE:
@@ -145,9 +145,9 @@ def shell_exec(command, device=None, wait=True):
         device = devices[0]
     if not os.path.isdir(device):
         os.makedirs(device)
-    print('adb -s '+str(device) + ' shell ' + str(command))
-    process = Popen('adb -s '+str(device) + ' shell ' + str(command),
-                    shell=True, cwd=os.getcwd() + '\\'+str(device)+'\\')
+    with open(os.devnull, 'w') as fp:
+        process = Popen('adb -s '+str(device) + ' shell ' + str(command),
+                        shell=True, cwd=os.getcwd() + '\\'+str(device)+'\\', stdout=fp, stderr=STDOUT)
     if wait:
         process.wait()
     else:
