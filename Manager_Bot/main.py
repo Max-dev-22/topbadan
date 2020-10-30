@@ -6,7 +6,7 @@ import adb
 
 def start():
     adb.start_app(adb.PACKAGE_NAME.vpn_phoenix)
-    sleep(10)
+    sleep(1)
 
 
 def loop():
