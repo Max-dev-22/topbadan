@@ -92,6 +92,21 @@ class KEYCODE:
     _KEYCODE = 85
 
 
+class PACKAGE_NAME:
+    whatsapp = 'com.whatsapp'
+    instagram = 'com.instagram.android'
+    chrome = 'com.android.chrome'
+    settings = 'com.android.settings'
+    youtube = 'com.google.android.youtube'
+    contacts = 'com.samsung.android.contacts'
+    messages = 'com.samsung.android.messaging'
+    twitter = 'com.twitter.android'
+    skype = 'com.skype.raider'
+    my_files = 'com.sec.android.app.myfiles'
+    telegramx = 'org.thunderdog.challegram'
+    vpn_phoenix = 'classicstudio.phoenix.proxy.vpn'
+
+
 def get_devices():
     devices = str(check_output('adb devices')).replace('\\r\\n', ',').replace(
         '\\tdevice', '').replace('b\'', '').replace(',,', '')
@@ -112,11 +127,12 @@ def screencap(device=None, wait=True, file_name='screencap.png'):
         device = devices[0]
     while not os.path.isdir(device):
         os.makedirs(device)
-    process = Popen('adb -s '+str(device) +
-                    ' exec-out screencap -p > screencap.png' + str(file_name), shell=True, cwd=os.getcwd() + '\\'+str(device)+'\\')
-    sleep(0.02)
+    process = Popen('adb -s '+str(device) + ' exec-out screencap -p > screencap.png' +
+                    str(file_name), shell=True, cwd=os.getcwd() + '\\'+str(device)+'\\')
     if wait:
         process.wait()
+    else:
+        sleep(0.05)
     return str(os.getcwd()+'\\'+str(device)+'\\'+str(file_name))
 
 
@@ -129,11 +145,18 @@ def shell_exec(command, device=None, wait=True):
         device = devices[0]
     if not os.path.isdir(device):
         os.makedirs(device)
-    process = Popen('adb -s '+str(device) +
-                    ' shell ' + str(command), shell=True, cwd=os.getcwd() + '\\'+str(device)+'\\')
-    sleep(0.02)
+    print('adb -s '+str(device) + ' shell ' + str(command))
+    process = Popen('adb -s '+str(device) + ' shell ' + str(command),
+                    shell=True, cwd=os.getcwd() + '\\'+str(device)+'\\')
     if wait:
         process.wait()
+    else:
+        sleep(0.05)
+
+
+def start_app(package, device=None, wait=True):
+    shell_exec('monkey -p '+str(package) +
+               ' -c android.intent.category.LAUNCHER 1')
 
 
 def input_text(text, device=None, wait=True):
@@ -159,3 +182,57 @@ def input_tap(pos, device=None, wait=True):
         print('adb input tap => position is not valid.(' + str(pos) + ')')
     shell_exec('input tap '+str(pos[0])+' ' +
                str(pos[1]), device=device, wait=wait)
+
+
+def input_swipe(pos1, pos2, device=None, wait=True):
+    if len(pos1) != 2:
+        print('adb input swipe => position (1) is not valid.('+str(pos1)+')')
+    try:
+        pos1[0] = int(pos1[0])
+        pos1[1] = int(pos1[1])
+    except:
+        print('adb input swipe => position (1) is not valid.(' + str(pos1) + ')')
+    if len(pos2) != 2:
+        print('adb input swipe => position (2) is not valid.('+str(pos2)+')')
+    try:
+        pos2[0] = int(pos2[0])
+        pos2[1] = int(pos2[1])
+    except:
+        print('adb input swipe => position (2) is not valid.(' + str(pos2) + ')')
+    shell_exec('input swipe '+str(pos1[0])+' ' + str(pos1[1]) + ' ' + str(
+        pos2[0]) + ' ' + str(pos2[1]), device=device, wait=wait)
+
+
+def input_draganddrop(pos1, pos2, device=None, wait=True):
+    if len(pos1) != 2:
+        print('adb input draganddrop => position (1) is not valid.('+str(pos1)+')')
+    try:
+        pos1[0] = int(pos1[0])
+        pos1[1] = int(pos1[1])
+    except:
+        print('adb input draganddrop => position (1) is not valid.(' + str(pos1) + ')')
+    if len(pos2) != 2:
+        print('adb input draganddrop => position (2) is not valid.('+str(pos2)+')')
+    try:
+        pos2[0] = int(pos2[0])
+        pos2[1] = int(pos2[1])
+    except:
+        print('adb input draganddrop => position (2) is not valid.(' + str(pos2) + ')')
+    shell_exec('input draganddrop '+str(pos1[0])+' ' + str(pos1[1]) + ' ' + str(
+        pos2[0]) + ' ' + str(pos2[1]), device=device, wait=wait)
+
+
+def input_press(device=None, wait=True):
+    shell_exec('input press', device=device, wait=wait)
+
+
+def input_roll(deltapos, device=None, wait=True):
+    if len(deltapos) != 2:
+        print('adb input tap => position is not valid.('+str(deltapos)+')')
+    try:
+        deltapos[0] = int(deltapos[0])
+        deltapos[1] = int(deltapos[1])
+    except:
+        print('adb input tap => position is not valid.(' + str(deltapos) + ')')
+    shell_exec('input roll '+str(deltapos[0])+' ' +
+               str(deltapos[1]), device=device, wait=wait)
