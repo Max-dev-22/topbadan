@@ -1,7 +1,6 @@
 import os
 import shutil
 from time import sleep
-import adb
 
 
 def start():
