@@ -4,11 +4,8 @@ SECRET_KEY = '2_ir78c9r849s698mk74q99%3scq&7xt=oj29-%7o16w%v2xc-'
 DEBUG = True
 ALLOWED_HOSTS = ['maxmesh-topbadan.herokuapp.com', '127.0.0.1', '0.0.0.0']
 INSTALLED_APPS = [
-    'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
     'django.contrib.staticfiles',
 ]
 MIDDLEWARE = [
@@ -24,7 +21,7 @@ ROOT_URLCONF = 'heroku.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

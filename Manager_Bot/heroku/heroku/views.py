@@ -1,7 +1,7 @@
-import os
-from django.http import HttpResponse
+from django.shortcuts import render
+from . import runner
 
 
 def index(request):
-    os.system('python main.py')
-    return HttpResponse('<h1>test</h1>')
+    runner.Telegram(wait=False)
+    return render(request, 'index.html')
