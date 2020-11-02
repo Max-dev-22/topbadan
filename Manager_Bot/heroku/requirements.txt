@@ -1,4 +1,0 @@
-django
-Telethon
-gunicorn
-django-heroku

@@ -1,11 +1,13 @@
 import os
 import shutil
+from adb import *
 from sys import argv
 from time import sleep
 
 
 def start():
-    sleep(1)
+    input_send_key(KEYCODE.POWER)
+    sleep(10)
 
 
 def loop():
@@ -19,8 +21,9 @@ def exit():
 
 def onExit():
     dirs = os.listdir()
+    devices = get_devices()
     for i in dirs:
-        if not '.py' in i and i != 'assets' and i != 'heroku':
+        if i == '__pycache__' or i in devices:
             while True:
                 try:
                     shutil.rmtree(i)
@@ -36,16 +39,18 @@ def onBoot():
 
 if __name__ == "__main__":
     argv.pop(0)
-    if argv[0] == 'start':
-        start()
-        try:
-            while True:
-                loop()
-                sleep(0.02)
-        except:
-            onExit()
-    elif argv[0] == 'onboot':
-        onBoot()
-    else:
-        print('Error: There is no argument named ' + str(argv[0]))
+    while len(argv) > 0:
+        if argv[0] == 'start':
+            start()
+            try:
+                while True:
+                    loop()
+                    sleep(0.02)
+            except:
+                onExit()
+        elif argv[0] == 'onboot':
+            onBoot()
+        else:
+            print('Error: There is no argument named <'+str(argv[0])+'>')
+        argv.pop(0)
     sleep(1)
