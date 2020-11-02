@@ -1,5 +1,7 @@
 body {
-  position: relative;
+  position: relative; 
+  background-color: #333333;
+
 }
 ul.nav-pills {
   top: 20px;

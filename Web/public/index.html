@@ -11,10 +11,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   </head>
-  <body data-spy="scroll" data-target="#myScrollspy" data-offset="1">
-    <div class="container-fluid">
-
-      <div class="container p-3 my-3 bg-dark text-white">
+  <body data-spy="scroll" data-target=".navbar" data-offset="50">
+    <div class=".container-md">
+      <div class=".container-fluid p-3 my-1 bg-dark text-white">
         <h1><p class="font-weight-bolder">Topbadan</p></h1>
         <form class="form-inline" action="/action_page.php">
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -41,10 +40,15 @@
 
           </div>
           &nbsp;
-          <button type="submit" class="btn btn-outline-primary">Submit</button>
+          <button class="btn btn-outline-light">
+            <span class="spinner-grow spinner-grow-sm"></span>
+            Send  
+          </button>
 
         </form>
       </div>
+
+     
       
       <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
         <a class="navbar-brand" href="#">Navbar</a>
@@ -71,61 +75,59 @@
             </form>
           </nav>
         </div>
+      </nav>    
+      <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed">  
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="#section1">Section 1</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#section2">Section 2</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#section3">Section 3</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+              Section 4
+            </a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="#section41">Link 1</a>
+              <a class="dropdown-item" href="#section42">Link 2</a>
+            </div>
+          </li>
+        </ul>
       </nav>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      <div class="container-fluid">
-        <div class="row">
-          <nav class="col-sm-3 col-4" id="myScrollspy">
-            <ul class="nav nav-pills flex-column">
-              <li class="nav-item">
-                <a class="nav-link active" href="#section1">Section 1</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#section2">Section 2</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#section3">Section 3</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Section 4</a>
-                <div class="dropdown-menu">
-                  <a class="dropdown-item" href="#section41">Link 1</a>
-                  <a class="dropdown-item" href="#section42">Link 2</a>
-                </div>
-              </li>
-            </ul>
-          </nav>
-          <div class="col-sm-9 col-8">
-            <div id="section1" class="bg-success">    
-              <h1>Section 1</h1>
-              <p>Try to scroll this section and look at the navigation list while scrolling!</p>
-            </div>
-            <div id="section2" class="bg-warning"> 
-              <h1>Section 2</h1>
-              <p>Try to scroll this section and look at the navigation list while scrolling!</p>
-            </div>        
-            <div id="section3" class="bg-secondary">         
-              <h1>Section 3</h1>
-              <p>Try to scroll this section and look at the navigation list while scrolling!</p>
-            </div>
-            <div id="section41" class="bg-danger">         
-              <h1>Section 4-1</h1>
-              <p>Try to scroll this section and look at the navigation list while scrolling!</p>
-            </div>      
-            <div id="section42" class="bg-info">         
-              <h1>Section 4-2</h1>
-              <p>Try to scroll this section and look at the navigation list while scrolling!</p>
-            </div>
-          </div>
-        </div>
+      
+      <div id="section1" class="container-fluid bg-success" style="padding-top:70px;padding-bottom:70px">
+        <h1>Section 1</h1>
+        <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+        <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+      </div>
+      <div id="section2" class="container-fluid bg-warning" style="padding-top:70px;padding-bottom:70px">
+        <h1>Section 2</h1>
+        <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+        <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+      </div>
+      <div id="section3" class="container-fluid bg-secondary" style="padding-top:70px;padding-bottom:70px">
+        <h1>Section 3</h1>
+        <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+        <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+      </div>
+      <div id="section41" class="container-fluid bg-danger" style="padding-top:70px;padding-bottom:70px">
+        <h1>Section 4 Submenu 1</h1>
+        <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+        <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+      </div>
+      <div id="section42" class="container-fluid bg-info" style="padding-top:70px;padding-bottom:70px">
+        <h1>Section 4 Submenu 2</h1>
+        <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+        <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
       </div>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       <div class="jumbotron text-center" style="margin-bottom:0">
         <div class="container">
           <ul class="pagination">
